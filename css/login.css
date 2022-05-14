@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/cover.jpg");
+    background-position: center;
+    background-size: 50%;
+
+
+}
+
+form {
+    border-radius: 3%;
+    padding: 20px;
+    background-color: white;
+    width: 30%;
+    /* margin: 100px 68%; */
+    box-shadow: -10px 14px 35px 8px rgb(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+
+.img-container {
+    text-align: center;
+}
+
+.create-account {
+    margin: 20px;
+    text-align: center;
+    color: #0d6efd;
+}

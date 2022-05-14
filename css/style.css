@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: rgb(228, 227, 227);
+}
+
+nav {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d6efd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+nav img {
+    width: 200px;
+}
+
+.right-nav .notification, .chat {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-img-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.body-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100vh;
+}
+
+
+.left-side {
+    padding: 10px;
+    position: sticky;
+    flex-basis: 25%;
+    top: 60px;
+    align-self: flex-start;
+    background: #cbdffa;
+    text-align: justify;
+    border-radius: 10px;
+
+}
+
+.left-side::-webkit-scrollbar {
+    display: none;
+}
+
+.left-side-title {
+    margin-bottom: 7%;
+    position: sticky;
+    top: 10px;
+}
+
+.friends {
+    max-height: 75vh;
+    overflow: auto;
+
+}
+
+.friends::-webkit-scrollbar {
+    display: none;
+}
+
+.friend-card {
+    display: flex;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.friend-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.friend-name-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.main-content {
+    flex-basis: 47%;
+}
+
+.new-post {
+    min-width: 100vh;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.60);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.new-post-text-container {
+    display: flex;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
+
+.new-post-text {
+    margin-left: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    resize: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.add-img-btn {
+    margin-right: 10px;
+}
+
+.add-img-btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.post-btn {
+    width: 5em;
+}
+
+.post-container {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100vh;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.60);
+
+}
+
+.post-header {
+    display: flex;
+}
+
+.post-author-date {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.post-author-date h6 {
+    font-size: small;
+}
+
+.post-content {
+    text-align: justify;
+    padding: 10px;
+    font-size: small;
+}
+
+.post-actions {
+    border-top: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.right-side {
+    background-color: rgba(255, 255, 255, 0.60);
+    flex-basis: 25%;
+    top: 60px;
+    align-self: flex-start;
+    position: sticky;
+    padding: 10px;
+    border-radius: 10px;
+
+}

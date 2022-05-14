@@ -1,0 +1,21 @@
+body {
+    background-image: url("../img/cover.jpg");
+    /* background-size: contain; */
+    background-position: center;
+    /* background-size: cover; */
+    background-size: 50%;
+}
+
+
+#f {
+    border-radius: 3%;
+    padding: 20px;
+    background-color: white;
+    width: 50%;
+    margin: 5% auto;
+    box-shadow: -10px 14px 35px 8px rgb(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
