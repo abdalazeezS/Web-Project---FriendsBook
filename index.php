@@ -50,7 +50,7 @@ if (isset($_SESSION['id'])) {
                 text-decoration: none;
             }
 
-            #logout:hover{
+            #logout:hover {
                 color: black;
                 background-color: tomato;
             }
@@ -92,8 +92,6 @@ if (isset($_SESSION['id'])) {
                 </div>
             </div>';
                 }
-                // remove friend button
-                /*<a href="delete_friend.php?friend_id=' . $row['user_id'] . '&user_id=' . $id . '"><button class="btn btn-secondary btn-sm">Remove</button></a> */
                 ?>
 
             </div>
@@ -117,6 +115,7 @@ if (isset($_SESSION['id'])) {
                         <button type="submit" class="post-btn btn btn-primary btn-sm">post</button>
                 </form>
             </div>
+
         </div>
 
         <?php
