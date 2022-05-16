@@ -4,14 +4,14 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/reg.css">
+    <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/reg.css">
     <title>Register</title>
 </head>
 
 <body>
 <div class="container">
-    <form class="row g-3" action="reg_user.php" method="post" id="f" enctype="multipart/form-data">
+    <form class="row g-3" action="../reg_user.php" method="post" id="f" enctype="multipart/form-data">
 
         <div style="text-align: center">
             <img style="text-align: center" src="img/logo-blue.png" alt=""/>
@@ -62,19 +62,11 @@
             </select>
         </div>
 
-
-        <div class="input-group mb-3">
-            <div class="custom-file">
-                <label class="custom-file-label" for="inputGroupFile02">Choose profile image</label>
-                <input required name="profile" type="file" class="custom-file-input" id="inputGroupFile02">
-            </div>
-        </div>
-
         <div class="col-12">
             <button type="submit" class="btn btn-primary" style="width:100%">Sign in</button>
         </div>
         <hr>
-        <h6 style="text-align: center;" class="already-have-account">Already have an account? <a href="login.php"><span>Login</span></a>
+        <h6 style="text-align: center;" class="already-have-account">Already have an account? <a href="../pages/login.php"><span>Login</span></a>
         </h6>
 
     </form>

@@ -16,8 +16,7 @@ VALUES ('$firstName','$lastName','$userName','$email','$password','$phone','$add
 $result = mysqli_query($conn, $query);
 
 if ($result) {
-    header("Location: login.php");
+    header("location: pages/login.php");
 } else {
-    echo "something went wrong";
     echo mysqli_error($conn);
 }

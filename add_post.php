@@ -10,5 +10,5 @@ $add_post_query_result = mysqli_query($conn, $add_post_query);
 if (mysqli_error($conn)) {
     echo "Error occurred";
 } else {
-    header("location: index.php");
+    header("location: pages/index.php");
 }

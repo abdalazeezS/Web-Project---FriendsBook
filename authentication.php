@@ -11,7 +11,7 @@ if (isset($_POST['userName']) && isset($_POST['password'])) {
 
     // if the login credentials are wrong, redirect to login page with error indication=1
     if (mysqli_num_rows($result) == 0) {
-        header("location: login.php?error=1");
+        header("location: pages/login.php?error=1");
     } else {
         $get_user_query = "SELECT * FROM user WHERE username='$username' AND password='$user_password'";
         $user_result = mysqli_query($conn, $get_user_query);
@@ -20,6 +20,6 @@ if (isset($_POST['userName']) && isset($_POST['password'])) {
         $id = $user['user_id'];
         session_start();
         $_SESSION['id'] = $id;
-        header("location:index.php?id='$id'");
+        header("location: pages/index.php?id='$id'");
     }
 }

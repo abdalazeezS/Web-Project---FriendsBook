@@ -1,11 +1,11 @@
 <?php
 
-require "dbconnect.php";
+require "../dbconnect.php";
 session_start();
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
 } else {
-    header("location:login.php");
+    header("location: ../pages/login.php");
 }
 
 $user_info_query = "SELECT * FROM user WHERE user_id=$id";
@@ -18,9 +18,9 @@ $user = mysqli_fetch_assoc($user_info_query_result);
 
 <head>
     <title>Profile</title>
-    <link rel="icon" href="img/icon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="icon" href="../img/icon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
 </head>
 <style>
     nav {
@@ -62,7 +62,7 @@ $user = mysqli_fetch_assoc($user_info_query_result);
 <body>
     <nav>
         <div class="left-nav">
-            <a href="index.php"><img src="img/logo.png" alt="website icon"></a>
+            <a href="../pages/index.php"><img src="../img/logo.png" alt="website icon"></a>
         </div>
         <style>
             .right-nav {
@@ -88,16 +88,16 @@ $user = mysqli_fetch_assoc($user_info_query_result);
         </style>
         <div class="right-nav">
 
-            <a href="profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="img/user.png" alt="" class="profile-img-nav">
+            <a href="../pages/profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
             </a>
-            <a href="logout.php">
+            <a href="../logout.php">
                 <button id="logout" class="btn primary-btn" style="margin-left: 10px;">Logout</button>
             </a>
         </div>
     </nav>
 
     <div class="nav container-fluid justify-content-center align-items-center">
-        <img class="profile-img" src="img/user.png" alt="profile photo" />
+        <img class="profile-img" src="../img/user.png" alt="profile photo" />
         <h2><?php echo $user['first_name'] . ' ' . $user['last_name'] ?></h2>
     </div>
     <div class="container">
@@ -117,7 +117,7 @@ $user = mysqli_fetch_assoc($user_info_query_result);
 
                             while ($friend_row = mysqli_fetch_assoc($friend_result)) {
                                 echo '<div class="friend-card">
-                                <img class="friend-img" src="img/user.png" alt="profile image" />
+                                <img class="friend-img" src="../img/user.png" alt="profile image" />
                                 <h6>' . $friend_row["first_name"] . " " . $friend_row["last_name"] . '</h6>
                             </div>';
                             }
@@ -147,7 +147,7 @@ $user = mysqli_fetch_assoc($user_info_query_result);
                                 <p>' . $row['text'] . '</p>
                                 <p>' . date('d M', $date) . '</p>
                                 <button class="btn btn-primary btn-sm">Edit post</button>
-                                <a href="delete_post.php?post_id=' . $row['post_id'] . '"><button class="btn btn-secondary btn-sm">Remove</button></a>
+                                <a href="../delete_post.php?post_id=' . $row['post_id'] . '"><button class="btn btn-secondary btn-sm">Remove</button></a>
                             </div>
                             <br />';
                         }

@@ -14,7 +14,7 @@ $add_friend_query2_result = mysqli_query($conn, $add_friend_query2);
 $add_friend_query_result = mysqli_query($conn, $add_friend_query);
 
 if (!mysqli_error($conn)) {
-    header("location: index.php");
+    header("location: pages/index.php");
 } else {
     echo mysqli_error($conn);
 }

@@ -1,5 +1,5 @@
 <?php
-require "dbconnect.php";
+require "../dbconnect.php";
 session_start();
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
@@ -7,7 +7,7 @@ if (isset($_SESSION['id'])) {
     $user_info = mysqli_query($conn, $query);
     $user = mysqli_fetch_assoc($user_info);
 } else {
-    header("location:login.php");
+    header("location: pages/login.php");
 }
 
 ?>
@@ -19,9 +19,9 @@ if (isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon">
     <title>FriendsBook</title>
 </head>
 
@@ -30,7 +30,7 @@ if (isset($_SESSION['id'])) {
     <!--nav bar-->
     <nav>
         <div class="left-nav">
-            <img src="img/logo.png" alt="website icon">
+            <img src="../img/logo.png" alt="website icon">
         </div>
         <style>
             .right-nav {
@@ -57,9 +57,9 @@ if (isset($_SESSION['id'])) {
         </style>
         <div class="right-nav">
 
-            <a href="profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="img/user.png" alt="" class="profile-img-nav">
+            <a href="../pages/profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
             </a>
-            <a href="logout.php">
+            <a href="../logout.php">
                 <button id="logout" class="btn primary-btn" style="margin-left: 10px;">Logout</button>
             </a>
         </div>
@@ -74,7 +74,7 @@ if (isset($_SESSION['id'])) {
             <h4 class="left-side-title">Friends Suggestions</h4>
             <div class="friends">
                 <?php
-                require "dbconnect.php";
+                require "../dbconnect.php";
 
                 $all_users_query = "SELECT * FROM user WHERE user_id NOT IN (SELECT friend_id FROM friendship WHERE user_id=$id) AND user_id!=$id";
 
@@ -82,11 +82,11 @@ if (isset($_SESSION['id'])) {
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="friend-card">
-                <img class="friend-img" src="img/user.png" alt="profile image">
+                <img class="friend-img" src="../img/user.png" alt="profile image">
                 <div class="friend-name-btns">
                     <h6>' . $row["first_name"] . " " . $row["last_name"] . '</h6>
                     <div class="buttons">
-                        <a href="add_friend.php?friend_id=' . $row['user_id'] . '&user_id=' . $id . '"><button class="btn btn-primary btn-sm">Add Friend</button></a>
+                        <a href="../add_friend.php?friend_id=' . $row['user_id'] . '&user_id=' . $id . '"><button class="btn btn-primary btn-sm">Add Friend</button></a>
                         
                     </div>
                 </div>
@@ -100,16 +100,16 @@ if (isset($_SESSION['id'])) {
         <!--main content-->
         <div class="main-content">
             <div class="new-post">
-                <form action="add_post.php" method="POST">
+                <form action="../add_post.php" method="POST">
                     <input type="text" hidden name="id" value="<?php echo $id; ?>">
                     <h4>new post</h4>
                     <div class="new-post-text-container">
-                        <img class="profile-img" src="img/user.png" alt="profile image" height="40">
+                        <img class="profile-img" src="../img/user.png" alt="profile image" height="40">
                         <textarea class="new-post-text" name="text" id="" cols="20" rows="3" placeholder="What's on your mind?"></textarea>
                     </div>
                     <div class="post-buttons">
                         <button type="button" style="width: 150px" class="add-img-btn btn btn-success btn-sm">
-                            <img class="add-img-btn-icon" src="img/add-img-2.png" alt="image icon"> Add image
+                            <img class="add-img-btn-icon" src="../img/add-img-2.png" alt="image icon"> Add image
                         </button>
 
                         <button type="submit" class="post-btn btn btn-primary btn-sm">post</button>
@@ -129,7 +129,7 @@ if (isset($_SESSION['id'])) {
             echo '<div class="post-container">
 
             <div class="post-header">
-                <img class="profile-img" src="img/user.png" alt="profile image" height="40">
+                <img class="profile-img" src="../img/user.png" alt="profile image" height="40">
                 <div class="post-author-date">
                     <p style="margin: 0; font-size: small;font-weight: 600">' . $row['first_name'] . " " . $row['last_name'] . '</p>
                     <span style="font-size: xx-small;color: #5a6268">' . date('d M', $date) . '</span>
