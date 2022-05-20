@@ -1,5 +1,6 @@
 <?php
 require "dbconnect.php";
+
 session_start();
 if (isset($_POST['userName']) && isset($_POST['password'])) {
     $username = $_POST['userName'];

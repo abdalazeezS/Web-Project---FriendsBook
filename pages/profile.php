@@ -1,10 +1,9 @@
 <?php
 
 require "../dbconnect.php";
-session_start();
-echo $_SESSION['user_id'];
-if (isset($_SESSION['user_id'])) {
-    $id = $_SESSION['user_id'];
+//session_start();
+if (isset($_GET['user_id'])) {
+    $id = $_GET['user_id'];
 } else {
     header("location: ../pages/login.php");
 }
@@ -89,7 +88,7 @@ $user = mysqli_fetch_assoc($user_info_query_result);
         </style>
         <div class="right-nav">
 
-            <a href="../pages/profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
+            <a href="../pages/profile.php?user_id=<?php echo $id?>"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
             </a>
             <a href="../logout.php">
                 <button id="logout" class="btn primary-btn" style="margin-left: 10px;">Logout</button>

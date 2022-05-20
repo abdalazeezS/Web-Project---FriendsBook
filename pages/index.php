@@ -74,7 +74,7 @@ if (isset($_SESSION['user_id'])) {
         </style>
         <div class="right-nav">
 
-            <a href="../pages/profile.php"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
+            <a href="../pages/profile.php?user_id=<?php echo $id?>"><span id="nav-user-name"><?php echo $user['first_name'] . " " . $user['last_name']; ?><span> <img src="../img/user.png" alt="" class="profile-img-nav">
             </a>
             <a href="../logout.php">
                 <button id="logout" class="btn primary-btn" style="margin-left: 10px;">Logout</button>
