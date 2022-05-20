@@ -2,8 +2,9 @@
 
 require "../dbconnect.php";
 session_start();
-if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id'];
+echo $_SESSION['user_id'];
+if (isset($_SESSION['user_id'])) {
+    $id = $_SESSION['user_id'];
 } else {
     header("location: ../pages/login.php");
 }
@@ -135,18 +136,18 @@ $user = mysqli_fetch_assoc($user_info_query_result);
                     <div class="new-post">
                         <h4>Recent Posts</h4>
                         <?php
-                        $query = "SELECT * FROM post WHERE user_id=$id";
+                        $query = "SELECT * FROM post WHERE user_id=$id ORDER BY post.post_date_posted DESC";
                         $user_post_query_result = mysqli_query($conn, $query);
 
                         while ($row = mysqli_fetch_assoc($user_post_query_result)) {
 
-                            $input = $row['date_posted'];
+                            $input = $row['post_date_posted'];
                             $date = strtotime($input);
 
                             echo '<div class="container right-side">
                                 <p>' . $row['text'] . '</p>
                                 <p>' . date('d M', $date) . '</p>
-                                <button class="btn btn-primary btn-sm">Edit post</button>
+                                <a href="../edit_post_form.php?post_id=' . $row['post_id'] . '"><button class="btn btn-primary btn-sm ">Edit post</button></a>
                                 <a href="../delete_post.php?post_id=' . $row['post_id'] . '"><button class="btn btn-secondary btn-sm">Remove</button></a>
                             </div>
                             <br />';

@@ -14,7 +14,7 @@
     <form class="row g-3" action="../reg_user.php" method="post" id="f" enctype="multipart/form-data">
 
         <div style="text-align: center">
-            <img style="text-align: center" src="img/logo-blue.png" alt=""/>
+            <img style="text-align: center" src="../img/logo-blue.png" alt=""/>
         </div>
 
         <div class="col-md-6">

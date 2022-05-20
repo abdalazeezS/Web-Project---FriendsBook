@@ -1,8 +1,6 @@
 body {
     background-image: url("../img/cover.jpg");
-    /* background-size: contain; */
     background-position: center;
-    /* background-size: cover; */
     background-size: 50%;
 }
 
